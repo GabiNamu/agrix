@@ -3,13 +3,18 @@ package com.betrybe.agrix.models.entities;
 
 import com.betrybe.agrix.security.Role;
 import com.fasterxml.jackson.annotation.JsonIgnore;
-import jakarta.persistence.*;
-import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.userdetails.UserDetails;
-
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 import java.util.Collection;
 import java.util.List;
 import java.util.Objects;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
+
 
 /**
  * Class representing a person.
@@ -32,6 +37,9 @@ public class Person implements UserDetails, GrantedAuthority {
   public Person() {
   }
 
+  /**
+   * Person constructor.
+   */
   public Person(Long id, String username, String password, Role role) {
     this.id = id;
     this.username = username;

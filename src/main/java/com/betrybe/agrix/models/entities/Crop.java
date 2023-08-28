@@ -35,9 +35,9 @@ public class Crop {
 
   @ManyToMany
   @JoinTable(
-    name = "crop_fertilizer",
-    joinColumns = @JoinColumn(name = "crop_id"),
-    inverseJoinColumns = @JoinColumn(name = "fertilizer_id")
+      name = "crop_fertilizer",
+      joinColumns = @JoinColumn(name = "crop_id"),
+      inverseJoinColumns = @JoinColumn(name = "fertilizer_id")
   )
   private List<Fertilizer> fertilizers;
 
@@ -48,11 +48,11 @@ public class Crop {
    * Crop constructor.
    */
   public Crop(
-    Integer id,
-    String name,
-    Double plantedArea,
-    LocalDate plantedDate,
-    LocalDate harvestDate) {
+      Integer id,
+      String name,
+      Double plantedArea,
+      LocalDate plantedDate,
+      LocalDate harvestDate) {
     this.id = id;
     this.name = name;
     this.plantedArea = plantedArea;

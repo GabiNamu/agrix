@@ -86,8 +86,8 @@ public class CropController {
    */
   @GetMapping("/search")
   public List<ResponseCropDto> getByHarvestDate(
-    @RequestParam LocalDate start,
-    @RequestParam LocalDate end) {
+      @RequestParam LocalDate start,
+      @RequestParam LocalDate end) {
     List<Crop> crops = cropService.getAll();
     return crops.stream()
       .filter((crop) ->
@@ -108,8 +108,8 @@ public class CropController {
    */
   @PostMapping("/{cropId}/fertilizers/{fertilizerId}")
   public ResponseEntity<String> setFertilizer(
-    @PathVariable Integer cropId,
-    @PathVariable Integer fertilizerId) {
+      @PathVariable Integer cropId,
+      @PathVariable Integer fertilizerId) {
     cropService.setFertilizer(cropId, fertilizerId);
     return ResponseEntity.status(HttpStatus.CREATED)
       .body("Fertilizante e plantação associados com sucesso!");

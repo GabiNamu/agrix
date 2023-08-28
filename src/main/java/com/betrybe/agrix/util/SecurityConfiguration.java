@@ -16,6 +16,9 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
+/**
+ * SecurityConfiguration class.
+ */
 @Configuration
 @EnableWebSecurity
 @EnableMethodSecurity(securedEnabled = true)
@@ -28,12 +31,15 @@ public class SecurityConfiguration {
     this.securityFilter = securityFilter;
   }
 
+  /**
+   * securityFilterChain method.
+   */
   @Bean
   public SecurityFilterChain securityFilterChain(HttpSecurity httpSecurity) throws Exception {
     return httpSecurity
       .csrf(AbstractHttpConfigurer::disable)
       .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
-      .authorizeHttpRequests( authorize -> authorize
+      .authorizeHttpRequests(authorize -> authorize
         .requestMatchers(HttpMethod.POST, "/persons").permitAll()
         .requestMatchers(HttpMethod.POST, "/auth/login").permitAll()
         .anyRequest().authenticated())
@@ -44,11 +50,11 @@ public class SecurityConfiguration {
   @Bean
   public AuthenticationManager authenticationManager(
       AuthenticationConfiguration authenticationConfiguration) throws Exception {
-      return authenticationConfiguration.getAuthenticationManager();
+    return authenticationConfiguration.getAuthenticationManager();
   }
 
   @Bean
-  public PasswordEncoder passwordEncoder(){
+  public PasswordEncoder passwordEncoder() {
     return new BCryptPasswordEncoder();
   }
 

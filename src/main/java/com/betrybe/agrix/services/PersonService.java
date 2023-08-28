@@ -1,11 +1,10 @@
 package com.betrybe.agrix.services;
 
-import com.betrybe.agrix.models.entities.Person;
 import com.betrybe.agrix.exception.PersonNotFoundException;
+import com.betrybe.agrix.models.entities.Person;
 import com.betrybe.agrix.models.repositories.PersonRepository;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -21,7 +20,7 @@ public class PersonService implements UserDetailsService {
 
   @Autowired
   public PersonService(
-    PersonRepository personRepository) {
+      PersonRepository personRepository) {
     this.personRepository = personRepository;
   }
 

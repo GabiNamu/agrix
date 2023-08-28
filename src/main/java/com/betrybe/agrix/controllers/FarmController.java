@@ -76,8 +76,8 @@ public class FarmController {
    */
   @PostMapping("/{farmId}/crops")
   public ResponseEntity<ResponseCropDto> createCrop(
-    @PathVariable Integer farmId,
-    @RequestBody CropDto cropDto) {
+      @PathVariable Integer farmId,
+      @RequestBody CropDto cropDto) {
     Optional<Farm> optionalFarm = farmService.getById(farmId);
 
     if (optionalFarm.isEmpty()) {

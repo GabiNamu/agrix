@@ -7,11 +7,11 @@ import java.time.LocalDate;
  * CropDto record.
  */
 public record CropDto(
-  Integer id,
-  String name,
-  Double plantedArea,
-  LocalDate plantedDate,
-  LocalDate harvestDate) {
+    Integer id,
+    String name,
+    Double plantedArea,
+    LocalDate plantedDate,
+    LocalDate harvestDate) {
 
   public Crop toCrop() {
     return new Crop(id, name, plantedArea, plantedDate, harvestDate);

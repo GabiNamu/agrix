@@ -15,8 +15,4 @@ public class GlobalControllerAdvice {
     return ResponseEntity.status(exception.getStatus()).body(exception.getMessage());
   }
 
-//  @ExceptionHandler(Exception.class)
-//  public ResponseEntity<String> handleException(Exception exception) {
-//    return ResponseEntity.status(500).body(exception.getMessage());
-//  }
 }
