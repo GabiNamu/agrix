@@ -2,18 +2,21 @@ package com.betrybe.agrix.models.entities;
 
 
 import com.betrybe.agrix.security.Role;
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import jakarta.persistence.*;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
+
+import java.util.Collection;
+import java.util.List;
 import java.util.Objects;
 
 /**
  * Class representing a person.
  */
 @Entity
-public class Person {
+@Table(name = "person")
+public class Person implements UserDetails {
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -74,5 +77,39 @@ public class Person {
         person.username) && Objects.equals(password, person.password)
         && Objects.equals(role, person.role);
   }
+
+  @Override
+  @JsonIgnore
+  public Collection<? extends GrantedAuthority> getAuthorities() {
+    return List.of();
+  }
+
+//  @Override
+//  @JsonIgnore
+//  public String getAuthority() {
+//    return this.getRole().getName();
+//  }
+
+  @Override
+  public boolean isAccountNonExpired() {
+    return true;
+  }
+
+  @Override
+  public boolean isAccountNonLocked() {
+    return true;
+  }
+
+  @Override
+  public boolean isCredentialsNonExpired() {
+    return true;
+  }
+
+  @Override
+  public boolean isEnabled() {
+    return true;
+  }
+
+
 }
 
