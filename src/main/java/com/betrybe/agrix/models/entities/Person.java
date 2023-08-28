@@ -16,7 +16,7 @@ import java.util.Objects;
  */
 @Entity
 @Table(name = "person")
-public class Person implements UserDetails {
+public class Person implements UserDetails, GrantedAuthority {
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -30,6 +30,13 @@ public class Person implements UserDetails {
   private Role role;
 
   public Person() {
+  }
+
+  public Person(Long id, String username, String password, Role role) {
+    this.id = id;
+    this.username = username;
+    this.password = password;
+    this.role = role;
   }
 
   public Long getId() {
@@ -81,14 +88,14 @@ public class Person implements UserDetails {
   @Override
   @JsonIgnore
   public Collection<? extends GrantedAuthority> getAuthorities() {
-    return List.of();
+    return List.of(this);
   }
 
-//  @Override
-//  @JsonIgnore
-//  public String getAuthority() {
-//    return this.getRole().getName();
-//  }
+  @Override
+  @JsonIgnore
+  public String getAuthority() {
+    return this.getRole().getName();
+  }
 
   @Override
   public boolean isAccountNonExpired() {

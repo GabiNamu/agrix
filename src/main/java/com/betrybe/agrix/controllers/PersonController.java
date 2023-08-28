@@ -34,11 +34,7 @@ public class PersonController {
 
   @PostMapping("/persons")
   public ResponseEntity<ResponsePersonDto> create(@RequestBody PersonDto personDto) {
-    Person person = new Person();
-    person.setUsername(personDto.username());
-    person.setPassword(personDto.password());
-    person.setRole(personDto.role());
-    Person newPerson = personService.create(person);
+    Person newPerson = personService.create(personDto.toPerson());
     return ResponseEntity.status(HttpStatus.CREATED).body(new ResponsePersonDto(
       newPerson.getId(),
       newPerson.getUsername(),
