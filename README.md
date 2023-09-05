@@ -1,13 +1,32 @@
-# :construction: README customizado em construção ! :construction:
-<!-- Olá, Tryber!
-Esse é apenas um arquivo inicial para o README do seu projeto no qual você pode customizar e reutilizar todas as vezes que for executar o trybe-publisher.
+# Agrix 🌾
+```diff
+@@ About @@
+```
+Agrix is a system that assists in the management and monitoring of farms with the aim of improving efficiency in crop cultivation.
 
-Para deixá-lo com a sua cara, basta alterar o seguinte arquivo da sua máquina: ~/.student-repo-publisher/custom/_NEW_README.md
+```diff
+@@ Skills @@
+```
+- knowledge of the Spring ecosystem to create API routes;
+- Dependency injection to connect the control, service, and persistence layers;
+- Spring Data JPA to implement entities and repositories for database persistence, as well as to implement custom queries;
+- Error handling in Spring Web;
+- Created the Dockerfile to configure the application for execution in Docker;
+- Date fields in the API routes and in the database;
+- Unit tests to ensure the quality and proper functioning of the implementation, with adequate code coverage;
+- knowledge of Spring Security to add authentication to the project;
+- Ensured that different routes adhere to specific authorization rules.
+  
+```diff
+@@ routes @@
+```
 
-É essencial que você preencha esse documento por conta própria, ok?
-Não deixe de usar nossas dicas de escrita de README de projetos, e deixe sua criatividade brilhar!
-:warning: IMPORTANTE: você precisa deixar nítido:
-- quais arquivos/pastas foram desenvolvidos por você; 
-- quais arquivos/pastas foram desenvolvidos por outra pessoa estudante;
-- quais arquivos/pastas foram desenvolvidos pela Trybe.
--->
+```diff
+@@ tecnologies @@
+```
+- Java;
+- JUnit;
+- Docker;
+- Mysql;
+- JWT;
+- Spring
