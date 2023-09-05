@@ -43,6 +43,45 @@ Exemplo de resposta:
 ```
 </details>
 
+GET `/farms`:
+<details>
+  <summary>🔍 Formato/exemplo de resposta</summary><br />
+
+Exemplo de resposta:
+
+```json
+[
+  {
+    "id": 1,
+    "name": "Fazendinha",
+    "size": 5.0
+  },
+  {
+    "id": 2,
+    "name": "Fazenda do Júlio",
+    "size": 2.5
+  }
+]
+```
+
+</details>
+
+GET `/farms/{id}`:
+<details>
+  <summary>🔍 Formato/exemplo de resposta</summary><br />
+
+Exemplo de resposta para a rota `/farms/3` (supondo que exista uma fazenda com `id = 3`):
+
+```json
+{
+  "id": 3,
+  "name": "My Cabbages!",
+  "size": 3.49
+}
+```
+
+</details>
+
 POST `/farms/{farmId}/crops`:
 <details>
   <summary>🔍 Formato/exemplo de requisição e resposta</summary><br />
@@ -263,6 +302,31 @@ Exemplo de resposta para a rota `/crops/1/fertilizers/2` (supondo que exista uma
 
 ```text
 Fertilizante e plantação associados com sucesso!
+```
+
+</details>
+
+GET `/crops/{cropId}/fertilizers`:
+<details>
+  <summary>🔍 Formato/exemplo de resposta</summary><br />
+Rota para listar os fertilizante associados a uma plantação.
+Exemplo de resposta para a rota `/crops/2/fertilizers` (supondo que exista uma plantação com `id = 2`):
+
+```json
+[
+  {
+    "id": 2,
+    "name": "Húmus",
+    "brand": "Feito pelas minhocas",
+    "composition": "Muitos nutrientes"
+  },
+  {
+    "id": 3,
+    "name": "Adubo",
+    "brand": "Feito pelas vaquinhas",
+    "composition": "Esterco"
+  }
+]
 ```
 
 </details>
