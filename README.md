@@ -3,6 +3,11 @@
 @@ About @@
 ```
 Agrix is a system that assists in the management and monitoring of farms with the aim of improving efficiency in crop cultivation.
+<details>
+<summary>🗄️ Banco de dados</summary><br>
+
+![Modelo de tabelas](images/agrix-tabelas-fase-b.png)
+</details>
 
 ```diff
 @@ Skills @@
@@ -21,8 +26,8 @@ Agrix is a system that assists in the management and monitoring of farms with th
 @@ routes @@
 ```
 ```diff
-- Para conseguir acessar as rotas é necessário cria um usuário através da rota persons 
-- e logar através da rota auth/login para receber o Token.
+! Para conseguir acessar as rotas é necessário cria um usuário através da rota persons 
+! e logar através da rota auth/login para receber o Token.
 ```
 POST `/persons`:
 <details>
@@ -98,7 +103,7 @@ Exemplo de resposta:
 
 GET `/farms`:
 ```diff
-- Acesso liberado apenas para usuários de role - USER, ADMIN OU MANAGER.
+! Acesso liberado apenas para usuários de role - USER, ADMIN OU MANAGER.
 ```
 <details>
   <summary>🔍 Formato/exemplo de resposta</summary><br />
@@ -201,7 +206,7 @@ Exemplo de resposta para a rota `/farms/1/crops` (supondo que exista uma fazenda
 
 GET `/crops`:
 ```diff
-- Acesso liberado apenas para usuários de role - ADMIN OU MANAGER.
+! Acesso liberado apenas para usuários de role - ADMIN OU MANAGER.
 ```
 <details>
   <summary>🔍 Formato/exemplo de resposta</summary><br />
@@ -309,7 +314,7 @@ Exemplo de resposta:
 
 GET `/fertilizers`:
 ```diff
-- Acesso liberado apenas para usuários de role ADMIN.
+! Acesso liberado apenas para usuários de role ADMIN.
 ```
 <details>
   <summary>🔍 Formato/exemplo de resposta</summary><br />
