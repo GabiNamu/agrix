@@ -20,6 +20,164 @@ Agrix is a system that assists in the management and monitoring of farms with th
 ```diff
 @@ routes @@
 ```
+POST `/farms`:
+<details>
+  <summary>🔍 Formato/exemplo de requisição e resposta</summary><br />
+
+Exemplo de requisição:
+```json
+{
+  "name": "Fazendinha",
+  "size": 5
+}
+```
+
+Exemplo de resposta:
+
+```json
+{
+  "id": 1,
+  "name": "Fazendinha",
+  "size": 5
+}
+```
+</details>
+
+POST `/farms/{farmId}/crops`:
+<details>
+  <summary>🔍 Formato/exemplo de requisição e resposta</summary><br />
+
+Exemplo de requisição na rota `/farms/1/crops` (supondo que exista uma fazenda com `id = 1`):
+
+```json
+{
+  "name": "Couve-flor",
+  "plantedArea": 5.43,
+  "plantedDate": "2022-12-05",
+  "harvestDate": "2023-06-08"
+}
+```
+
+Exemplo de resposta:
+
+```json
+{
+  "id": 1,
+  "name": "Couve-flor",
+  "plantedArea": 5.43,
+  "plantedDate": "2022-12-05",
+  "harvestDate": "2023-06-08",
+  "farmId": 1
+}
+```
+
+Note que o `id` da resposta se refere à plantação, e que o da fazenda está em `farmId`.
+
+</details>
+
+GET `/farms/{farmId}/crops`:
+<details>
+  <summary>🔍 Formato/exemplo de resposta</summary><br />
+
+Exemplo de resposta para a rota `/farms/1/crops` (supondo que exista uma fazenda com `id = 1`):
+
+```json
+[
+  {
+    "id": 1,
+    "name": "Couve-flor",
+    "plantedArea": 5.43,
+    "plantedDate": "2022-12-05",
+    "harvestDate": "2023-06-08",
+    "farmId": 1
+  },
+  {
+    "id": 2,
+    "name": "Alface",
+    "plantedArea": 21.3,
+    "plantedDate": "2022-02-15",
+    "harvestDate": "2023-02-20",
+    "farmId": 1
+  }
+]
+```
+
+</details>
+
+GET `/crops`:
+<details>
+  <summary>🔍 Formato/exemplo de resposta</summary><br />
+
+```json
+[
+  {
+    "id": 1,
+    "name": "Couve-flor",
+    "plantedArea": 5.43,
+    "plantedDate": "2022-02-15",
+    "harvestDate": "2023-02-20",
+    "farmId": 1
+  },
+  {
+    "id": 2,
+    "name": "Alface",
+    "plantedArea": 21.3,
+    "plantedDate": "2022-02-15",
+    "harvestDate": "2023-02-20",
+    "farmId": 1
+  }
+]
+```
+
+</details>
+
+GET `/crops/{id}`:
+<details>
+  <summary>🔍 Formato/exemplo de resposta</summary><br />
+
+Exemplo de resposta para a rota `/crops/3` (supondo que exista uma plantação com `id = 3`:
+
+```json
+{
+  "id": 3,
+  "name": "Tomate",
+  "plantedArea": 1.9,
+  "plantedDate": "2023-05-22",
+  "harvestDate": "2024-01-10",
+  "farmId": 2
+}
+```
+
+</details>
+
+GET `/crops/search`:
+<details>
+  <summary>🔍 Formato/exemplo de resposta</summary><br />
+
+Exemplo de resposta para a rota `/crops/search?start=2023-01-07&end=2024-01-10`:
+
+```json
+[
+  {
+    "id": 1,
+    "name": "Couve-flor",
+    "plantedArea": 5.43,
+    "plantedDate": "2022-02-15",
+    "harvestDate": "2023-02-20",
+    "farmId": 1
+  },
+  {
+    "id": 3,
+    "name": "Tomate",
+    "plantedArea": 1.9,
+    "plantedDate": "2023-05-22",
+    "harvestDate": "2024-01-10",
+    "farmId": 2
+  }
+]
+```
+
+</details>
 
 ```diff
 @@ tecnologies @@
