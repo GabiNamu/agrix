@@ -153,6 +153,9 @@ Exemplo de resposta para a rota `/crops/3` (supondo que exista uma plantação c
 GET `/crops/search`:
 <details>
   <summary>🔍 Formato/exemplo de resposta</summary><br />
+  - deve receber dois parâmetros por query string para busca:
+    - `start`: data de início
+    - `end`: data de fim
 
 Exemplo de resposta para a rota `/crops/search?start=2023-01-07&end=2024-01-10`:
 
@@ -175,6 +178,91 @@ Exemplo de resposta para a rota `/crops/search?start=2023-01-07&end=2024-01-10`:
     "farmId": 2
   }
 ]
+```
+
+</details>
+
+POST `/fertilizers`:
+<details>
+  <summary>🔍 Formato/exemplo de requisição e resposta</summary><br />
+
+Exemplo de requisição:
+
+```json
+{
+  "name": "Compostagem",
+  "brand": "Feita em casa",
+  "composition": "Restos de alimentos"
+}
+```
+
+Exemplo de resposta:
+
+```json
+{
+  "id": 1,
+  "name": "Compostagem",
+  "brand": "Feita em casa",
+  "composition": "Restos de alimentos"
+}
+```
+
+</details>
+
+GET `/fertilizers`:
+<details>
+  <summary>🔍 Formato/exemplo de resposta</summary><br />
+
+```json
+[
+  {
+    "id": 1,
+    "name": "Compostagem",
+    "brand": "Feita em casa",
+    "composition": "Restos de alimentos"
+  },
+  {
+    "id": 2,
+    "name": "Húmus",
+    "brand": "Feito pelas minhocas",
+    "composition": "Muitos nutrientes"
+  },
+  {
+    "id": 3,
+    "name": "Adubo",
+    "brand": "Feito pelas vaquinhas",
+    "composition": "Esterco"
+  }
+]
+```
+</details>
+
+GET `/fertilizers/{id}`:
+<details>
+  <summary>🔍 Formato/exemplo de resposta</summary><br />
+
+Exemplo de resposta da rota `/fertilizers/3` (supondo que exista um fertilizante com `id = 3`):
+
+```json
+{
+  "id": 3,
+  "name": "Adubo",
+  "brand": "Feito pelas vaquinhas",
+  "composition": "Esterco"
+}
+```
+
+</details>
+
+POST `/crops/{cropId}/fertilizers/{fertilizerId}`:
+<details>
+  <summary>🔍 Formato/exemplo de requisição e resposta</summary><br />
+  Rota para criar a associação entre uma plantação e um fertilizante.
+
+Exemplo de resposta para a rota `/crops/1/fertilizers/2` (supondo que exista uma plantação com `id = 1` e um fertilizante com `id = 2`):
+
+```text
+Fertilizante e plantação associados com sucesso!
 ```
 
 </details>
