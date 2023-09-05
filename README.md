@@ -20,6 +20,59 @@ Agrix is a system that assists in the management and monitoring of farms with th
 ```diff
 @@ routes @@
 ```
+```diff
+- Para conseguir acessar as rotas é necessário cria um usuário através da rota persons 
+- e logar através da rota auth/login para receber o Token.
+```
+POST `/persons`:
+<details>
+  <summary>🔍 Formato/exemplo de requisição e resposta</summary><br />
+
+Exemplo de requisição na rota POST `/persons`:
+
+```json
+{
+  "username": "zerocool",
+  "password": "senhasecreta",
+  "role": "ADMIN"
+}
+```
+
+Exemplo de resposta:
+
+```json
+{
+  "id": 1,
+  "username": "zerocool",
+  "role": "ADMIN"
+}
+```
+
+</details>
+
+POST `/auth/login`:
+<details>
+  <summary>🔍 Formato/exemplo de requisição e resposta</summary><br />
+
+Exemplo de requisição na rota POST `/auth/login` (suppondo que os dados estejam corretos):
+
+```json
+{
+  "username": "zerocool",
+  "password": "senhasecreta"
+}
+```
+
+Exemplo de resposta:
+
+```json
+{
+  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJhZ3JpeCIsInN1YiI6Im1ycm9ib3QiLCJleHAiOjE2ODk5ODY2NTN9.lyha4rMcMhFd_ij-farGCXuJy-1Tun1IpJd5Ot6z_5w"
+}
+```
+
+</details>
+
 POST `/farms`:
 <details>
   <summary>🔍 Formato/exemplo de requisição e resposta</summary><br />
@@ -44,6 +97,9 @@ Exemplo de resposta:
 </details>
 
 GET `/farms`:
+```diff
+- Acesso liberado apenas para usuários de role - USER, ADMIN OU MANAGER.
+```
 <details>
   <summary>🔍 Formato/exemplo de resposta</summary><br />
 
@@ -144,6 +200,9 @@ Exemplo de resposta para a rota `/farms/1/crops` (supondo que exista uma fazenda
 </details>
 
 GET `/crops`:
+```diff
+- Acesso liberado apenas para usuários de role - ADMIN OU MANAGER.
+```
 <details>
   <summary>🔍 Formato/exemplo de resposta</summary><br />
 
@@ -249,6 +308,9 @@ Exemplo de resposta:
 </details>
 
 GET `/fertilizers`:
+```diff
+- Acesso liberado apenas para usuários de role ADMIN.
+```
 <details>
   <summary>🔍 Formato/exemplo de resposta</summary><br />
 
