@@ -1,8 +1,8 @@
 # Agrix 🌾
 ```diff
-@@ About @@
+@@ Sobre @@
 ```
-Agrix is a system that assists in the management and monitoring of farms with the aim of improving efficiency in crop cultivation.
+Agrix é um um sistema que ajuda na gestão e monitoramento de fazendas com o intuito de melhorar a eficiência no cultivo de plantações
 <details>
 <summary>🗄️ Banco de dados</summary><br>
 
@@ -10,20 +10,20 @@ Agrix is a system that assists in the management and monitoring of farms with th
 </details>
 
 ```diff
-@@ Skills @@
+@@ Habilidades trabalhadas @@
 ```
-- knowledge of the Spring ecosystem to create API routes;
-- Dependency injection to connect the control, service, and persistence layers;
-- Spring Data JPA to implement entities and repositories for database persistence, as well as to implement custom queries;
-- Error handling in Spring Web;
-- Created the Dockerfile to configure the application for execution in Docker;
-- Date fields in the API routes and in the database;
-- Unit tests to ensure the quality and proper functioning of the implementation, with adequate code coverage;
-- knowledge of Spring Security to add authentication to the project;
-- Ensured that different routes adhere to specific authorization rules.
+- Conhecimento do ecossistema Spring para criar rotas da API;
+- injeção de dependência para conectar as camadas de controle, serviço e persistência;
+- Spring Data JPA para implementar entidades e repositórios para a persistência em banco de dados, bem como implementar buscas customizadas;
+- Gerenciamento de erros no Spring Web;
+- Dockerfile para configurar a aplicação para execução no Docker;
+- Utilizei campos de data nas rotas da API e no banco de dados;
+- Testes unitários para garantir a qualidade e funcionamento correto da implementação, com cobertura de código adequada;
+- Spring Security para adicionar autenticação ao projeto;
+- Garanti que diferentes rotas atenda a regras específicas de autorização.
   
 ```diff
-@@ routes @@
+@@ Rotas @@
 ```
 ```diff
 ! Para conseguir acessar as rotas é necessário cria um usuário através da rota persons 
@@ -399,7 +399,7 @@ Exemplo de resposta para a rota `/crops/2/fertilizers` (supondo que exista uma p
 </details>
 
 ```diff
-@@ tecnologies @@
+@@ Principais tecnológias @@
 ```
 ```diff
 + Java;
