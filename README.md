@@ -401,9 +401,11 @@ Exemplo de resposta para a rota `/crops/2/fertilizers` (supondo que exista uma p
 ```diff
 @@ tecnologies @@
 ```
-- Java;
-- JUnit;
-- Docker;
-- Mysql;
-- JWT;
-- Spring
+```diff
++ Java;
++ JUnit;
++ Docker;
++ Mysql;
++ JWT;
++ Spring
+```
